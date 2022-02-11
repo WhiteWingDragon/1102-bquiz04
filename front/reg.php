@@ -32,3 +32,39 @@
     <button onclick="reg()">註冊</button>
     <button onclick="reset()">重置</button>
 </div>
+
+<script>
+function chkAcc(){
+    let acc=$("#acc").val()
+    $.post("api/chk_acc.php",{acc},(chk)=>{
+        if(parseInt(chk) || acc=='admin'){
+            alert("帳號已存在")
+        }else{
+            alert("此帳號可使用")
+        }
+    })
+}
+
+function reg(){
+    let data={
+        acc:$("#acc").val(),
+        name:$("#name").val(),
+        pw:$("#pw").val(),
+        addr:$("#addr").val(),
+        tel:$("#tel").val(),
+        email:$("#email").val(),
+    }
+    $.post("api/chk_acc.php",{acc:data.acc},(chk)=>{
+        if(parseInt(chk) || data.acc=='admin'){
+            alert("帳號已存在")
+        }else{
+            $.post("api/reg.php",data,()=>{
+                alert("註冊完成，歡迎加入")
+                location.href='?do=login'
+            })
+        }
+    })
+}
+
+
+</script>
