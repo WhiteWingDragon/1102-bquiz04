@@ -35,3 +35,13 @@
     </tr>
 </table>
 
+<script>
+$("#parent").load("api/get_big.php")
+
+function newBig(){
+   // let big=$("#big").val();
+    $.post("api/new_big.php",{name:$("#big").val()},(res)=>{
+        location.reload();
+    })
+}
+</script>
