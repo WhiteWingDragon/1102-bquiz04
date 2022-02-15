@@ -131,7 +131,7 @@ function dd($array){
 $Mem=new DB("member");
 $Admin=new DB('admin');
 $Bot=new DB('bottom');
-
+$Ord=new DB('ord');
 
 /* $admin['acc']='admin';
 $admin['pw']='1234';
