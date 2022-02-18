@@ -102,10 +102,13 @@ input[type=text],input[type=password]
 .s
 {
 	display:none;
+	
 }
+
 div.ww:hover > div.s
 {
 	display:block;
+	
 }
 .sb button
 {
